@@ -30,25 +30,7 @@ def isbingo(board):
     except IndexError:
         return False
 
-
-def part1(lines):
-    """
-    >>> part1(EXAMPLE)
-    4512
-    """
-    draws, boards = parse(lines)
-    for draw in draws:
-        for board in boards:
-            mark(board, draw)
-            if isbingo(board):
-                return draw * sum(filter(None, itertools.chain.from_iterable(board)))
-
-
 def part2(lines):
-    """
-    >>> part2(EXAMPLE)
-    1924
-    """
     draws, boards = parse(lines)
     for i, draw in enumerate(draws):
         for board in boards:
@@ -63,7 +45,6 @@ def part2(lines):
 def main():
     with open("input.txt") as f:
         lines = f.readlines()
-    print(part1(lines))
     print(part2(lines))
 
 if __name__ == "__main__":
