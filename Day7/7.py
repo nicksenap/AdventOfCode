@@ -1,5 +1,7 @@
+import math
+
 def main():
-    with open("example.txt", "r") as f:
+    with open("input.txt", "r") as f:
         line = f.read()
         # print(part1(line))
         print(part2(line))
@@ -18,13 +20,18 @@ def part1(line):
 
 def part2(line):
     lineList = [int(item) for item in line.split(',')]
-    print(distance(lineList, lineList[0]))
-    # used = set()
-    # unique = [x for x in lineList if x not in used and (used.add(x) or True)]
-    # print(len(unique))
+    mean0, mean1 = get_means(lineList)
+    return min(
+        sum(t(abs(item - mean0)) for item in lineList),
+        sum(t(abs(item - mean1)) for item in lineList),
+    )
 
-def distance(list, value):
-    return [sum(range(abs(foo - value) + 1)) for foo in list]
+def get_means(lineList):
+    mean = sum(lineList) / len(lineList)
+    return math.floor(mean), math.ceil(mean)
+
+def t(n):
+    return n * (n + 1) // 2
 
 if __name__ == "__main__":
     main()
