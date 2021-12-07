@@ -1,3 +1,4 @@
 ﻿# AdventOfCode2021
 Python solutions to the Advent of Code problems. Check out https://adventofcode.com
-![calendar](https://user-images.githubusercontent.com/8737541/144393231-227fee88-a0b6-4879-a5db-b50bc4ba86b2.png)
+![160be980-3b1a-11eb-9dbe-439a40adfa99](https://user-images.githubusercontent.com/8737541/145033860-53bc6e3d-f5da-4946-aef7-d8c87806d38c.png)
+
