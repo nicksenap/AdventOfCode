@@ -14,18 +14,15 @@ def day_3_part_1(imput):
         
 def day_3_part_2(input):
     SUM = 0
-    IDX  = 1
     buffer = []
-    for line in input.splitlines():
+    inputs = input.splitlines()
+    for idx, line in enumerate(inputs):
         buffer.append(line)
         SCORE = 0
-        if (IDX == 3):
-            IDX = 1
+        if ((idx + 1) % 3 == 0):
             a,b,c = buffer
             buffer = []
             SCORE += process_input(a,b,c)
-        else:
-            IDX += 1
         SUM += SCORE
     return SUM
 
